@@ -51,6 +51,9 @@ pipeline{
         stage('Install Dependencies') {
             steps {
                 sh 'npm install --include=dev'
+                sh 'npm cache clean -f'
+                sh 'npm install -g n'
+                sh 'n stable'
                 sh 'pip install pylint'
                 //for production environment - installing wrangler to interact with cloudflare worker
                 sh 'npm install -g wrangler'

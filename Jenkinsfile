@@ -48,32 +48,18 @@ pipeline{
                 echo "Passcode: ${params.PASSWORD}"
             }
         }
-        stage("Checking the Input"){
-            input{
-                message "Should we continue"
-                ok "Yes, offcourse"
-            } 
-            steps{
-                echo "Hi ${AUTHOR_NAME}, Nice to meet you. I have checked the inputs successfully."
-            }
-        }
-        stage("Checking the When"){
-            when{
-                equals expected: 1, actual: 1
-            }
-            steps{
-                echo "If you are seeing this, when block is executed successfully..."
-            }
-        }
-        stage("Cheking the Shell"){
-            steps{
-                echo "Checking the shell commands..."
-                sh 'printenv'
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install --include=dev'
+                sh 'pip install pylint'
+                //for production environment - installing wrangler to interact with cloudflare worker
+                sh 'npm install -g wrangler'
             }
         }
         stage("Release"){
             steps{
-                echo "Product is released..."
+                sh 'wrangler login'
+                echo 'product is released'
             }
         }
     }

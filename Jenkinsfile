@@ -51,9 +51,13 @@ pipeline{
         }
         stage('Install Dependencies') {
             steps {
+                sh 'npm install -g npm@latest'
                 sh 'npm -v'
                 sh 'node -v'
-                sh 'npm install'
+                sh 'npm install -g n'
+                sh 'n lts'
+                sh 'n latest'
+                sh 'n prune'
                 sh 'pip install pylint'
                 //for production environment - installing wrangler to interact with cloudflare worker
                 sh 'npm install -g wrangler'

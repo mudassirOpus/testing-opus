@@ -1,4 +1,4 @@
-name="Opus Testing"
+name="opus-test-wrangler"
 
 [vars]
 CLOUDFLARE_API_TOKEN="17T_wEzPeFaboD6T4X792wiyZs_D2nVCr0245MhA"

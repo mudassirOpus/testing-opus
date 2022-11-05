@@ -53,6 +53,8 @@ pipeline{
             steps {
                 sh 'npm install'
                 sh 'pip install pylint'
+                sh 'npm -v'
+                sh 'node -v'
                 //for production environment - installing wrangler to interact with cloudflare worker
                 sh 'npm install -g wrangler'
                 sh 'npx wrangler login'

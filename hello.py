@@ -1,2 +1,2 @@
-print("github hook is working")
+print("github hook is working fine")
 print("got it now")

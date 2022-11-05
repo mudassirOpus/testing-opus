@@ -6,7 +6,7 @@ pipeline{
         AUTHOR_EMAIL= 'mudassir@parseclabs.ca'
     }
     tools{
-        nodejs 16.14.0   
+        nodejs '16.14.0'   
     }
     
     parameters{

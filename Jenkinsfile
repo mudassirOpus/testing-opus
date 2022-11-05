@@ -37,6 +37,7 @@ pipeline{
             steps{
                 echo "1: Hi ${name}, ${globalVar}"
                 echo "2: And, ${localVar}"
+                echo 'webhook is also working fine'
             }
         }
         stage("Checking the Parameters"){

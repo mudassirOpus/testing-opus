@@ -5,6 +5,10 @@ pipeline{
         globalVar= 'I came from global env.'
         AUTHOR_EMAIL= 'mudassir@parseclabs.ca'
     }
+    tools{
+        nodejs 16.14.0   
+    }
+    
     parameters{
         string(name: 'AUTHOR_NAME', defaultValue: 'Mudassir', description: 'This is author name')
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
@@ -51,18 +55,7 @@ pipeline{
         }
         stage('Install Dependencies') {
             steps {
-                sh 'npm install npm@latest'
-                sh 'npm -v'
-                sh 'node -v'
-                sh 'npm install n'
-                sh 'npx n lts'
-                sh 'npx n latest'
-                sh 'npx n prune'
-                sh 'npm n -v'
-                sh 'pip install pylint'
-                //for production environment - installing wrangler to interact with cloudflare worker
-                sh 'npm install -g wrangler'
-                sh 'npx wrangler login'
+                sh 'npm version'
             }
         }
         stage("Release"){

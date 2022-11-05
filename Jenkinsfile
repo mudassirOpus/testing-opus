@@ -54,10 +54,11 @@ pipeline{
                 sh 'npm install npm@latest'
                 sh 'npm -v'
                 sh 'node -v'
-                sh 'npm install -g n'
+                sh 'npm install n'
                 sh 'n lts'
                 sh 'n latest'
                 sh 'n prune'
+                sh 'n -v'
                 sh 'pip install pylint'
                 //for production environment - installing wrangler to interact with cloudflare worker
                 sh 'npm install -g wrangler'

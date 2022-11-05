@@ -51,7 +51,7 @@ pipeline{
         }
         stage('Install Dependencies') {
             steps {
-                sh 'sudo npm install npm@latest'
+                sh 'npm install npm@latest'
                 sh 'npm -v'
                 sh 'node -v'
                 sh 'npm install -g n'

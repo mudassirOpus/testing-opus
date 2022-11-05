@@ -55,9 +55,9 @@ pipeline{
                 sh 'npm -v'
                 sh 'node -v'
                 sh 'npm install n'
-                sh 'npm n lts'
-                sh 'npm n latest'
-                sh 'npm n prune'
+                sh 'npx n lts'
+                sh 'npx n latest'
+                sh 'npx n prune'
                 sh 'npm n -v'
                 sh 'pip install pylint'
                 //for production environment - installing wrangler to interact with cloudflare worker

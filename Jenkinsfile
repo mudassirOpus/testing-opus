@@ -5,7 +5,7 @@ pipeline{
     environment{
         globalVar= 'I came from global env.'
         AUTHOR_EMAIL= 'mudassir@parseclabs.ca'
-    }
+    } 
     tools{
         nodejs '16.14.0'
     }

@@ -5,6 +5,7 @@ pipeline{
     environment{
         globalVar= 'I came from global env.'
         AUTHOR_EMAIL= 'mudassir@parseclabs.ca'
+        CLOUDFLARE
     } 
     tools{
         nodejs '16.14.0'
@@ -60,8 +61,10 @@ pipeline{
                 sh 'pip install pylint'
                 //for production environment - installing wrangler to interact with cloudflare worker
                 sh 'npm install -g wrangler'
-                sh 'npx wrangler login --config wrangler.toml'
-                sh 'CLOUDFLARE_API_TOKEN=17T_wEzPeFaboD6T4X792wiyZs_D2nVCr0245MhA npx wrangler login'
+                sh 'npx wrangler init testing-opus'
+                sh 'cd testing-opus'
+                sh 'mkdir public'
+                sh 'CLOUDFLARE_API_TOKEN=17T_wEzPeFaboD6T4X792wiyZs_D2nVCr0245MhA npx wrangler pages publish ./public'
             }
         }
         stage("Release"){

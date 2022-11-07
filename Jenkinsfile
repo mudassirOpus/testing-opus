@@ -61,7 +61,7 @@ pipeline{
                 //for production environment - installing wrangler to interact with cloudflare worker
                 sh 'npm install -g wrangler'
                 sh 'npx wrangler login --config wrangler.toml'
-                sh 'CLOUDFLARE_API_TOKEN npx wrangler login'
+                sh 'CLOUDFLARE_API_TOKEN=17T_wEzPeFaboD6T4X792wiyZs_D2nVCr0245MhA npx wrangler login'
             }
         }
         stage("Release"){

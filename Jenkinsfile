@@ -52,6 +52,7 @@ pipeline{
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
                 echo "Passcode: ${params.PASSWORD}"
+                error('Build failed due to following errors: errors in JS and Svelte code')
             }
         }
         stage('Install Dependencies') {

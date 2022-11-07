@@ -52,7 +52,7 @@ pipeline{
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
                 echo "Passcode: ${params.PASSWORD}"
-                error('Build failed due to following errors: errors in JS and Svelte code')
+                sh 'exit 1'
             }
         }
         stage('Install Dependencies') {
@@ -82,7 +82,7 @@ pipeline{
             echo "Sending email for job success..."
             
             mail charset: 'UTF-8', from: '', mimeType: 'text/html',
-            to: "${env.CHANGE_AUTHOR_EMAIL}",
+            to: "${AUTHOR_EMAIL}",
             replyTo: '',
             cc: '',
             bcc: '',
@@ -95,7 +95,7 @@ pipeline{
             echo "Sending email for job failed..."
 
             mail charset: 'UTF-8', from: '', mimeType: 'text/html',
-            to: "${env.CHANGE_AUTHOR_EMAIL}",
+            to: "${AUTHOR_EMAIL}",
             replyTo: '',
             cc: '',
             bcc: '',
@@ -107,7 +107,7 @@ pipeline{
             echo 'Job is unstable!'
             echo 'Sending email for unstable job!'
             mail charset: 'UTF-8', from: '', mimeType: 'text/html',
-            to: "${env.CHANGE_AUTHOR_EMAIL}",
+            to: "${AUTHOR_EMAIL}",
             cc: '',
             replyTo: '',
             bcc: '',

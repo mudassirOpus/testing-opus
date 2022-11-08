@@ -62,7 +62,7 @@ pipeline{
                 sh 'npm install -g wrangler'
                 sh 'npx wrangler init testing-opus'
                 sh 'cd testing-opus'
-                sh 'CLOUDFLARE_API_TOKEN=ROEwy3uGRi289q0su183X0kOl3FDeU0vKzamtTUk npx wrangler pages publish --project-name=opus-test --branch=preview ./public'
+                sh 'CLOUDFLARE_API_TOKEN=Dzd5Vp8F4GnIIhW1-J3-VvEG_gxVe1pwddHa7qnZ npx wrangler pages publish --branch=preview ./public'
             }
         }
         stage("Release"){

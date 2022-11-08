@@ -52,7 +52,6 @@ pipeline{
                 echo "Toggle: ${params.TOGGLE}"
                 echo "Choice: ${params.CHOICE}"
                 echo "Passcode: ${params.PASSWORD}"
-                sh 'exit 1'
             }
         }
         stage('Install Dependencies') {
@@ -63,7 +62,7 @@ pipeline{
                 sh 'npm install -g wrangler'
                 sh 'npx wrangler init testing-opus'
                 sh 'cd testing-opus'
-                sh 'CLOUDFLARE_API_TOKEN=17T_wEzPeFaboD6T4X792wiyZs_D2nVCr0245MhA npx wrangler pages publish --project-name=opus-test ./public'
+                sh 'CLOUDFLARE_API_TOKEN=ROEwy3uGRi289q0su183X0kOl3FDeU0vKzamtTUk npx wrangler pages publish --project-name=opus-test ./public'
             }
         }
         stage("Release"){

@@ -1,5 +1,5 @@
-name="opus-test-wrangler"
-account_id= "1b52ea86cd7b6e76dcfe3cc846a7d4c1"
+name="opus"
+account_id= "c862ac7430b0f691300ece3979001270"
 
 [vars]
-CLOUDFLARE_API_TOKEN="17T_wEzPeFaboD6T4X792wiyZs_D2nVCr0245MhA"
+CLOUDFLARE_API_TOKEN="Dzd5Vp8F4GnIIhW1-J3-VvEG_gxVe1pwddHa7qnZ"

@@ -60,8 +60,11 @@ pipeline{
                 sh 'pip install pylint'
                 //for production environment - installing wrangler to interact with cloudflare worker
                 sh 'npm install -g wrangler'
+                sh 'ls -a'
                 sh 'npx wrangler init testing-opus-ai'
+                sh 'ls -a'
                 sh 'cd testing-opus-ai'
+                sh 'ls -a'
                 sh 'CLOUDFLARE_API_TOKEN=Dzd5Vp8F4GnIIhW1-J3-VvEG_gxVe1pwddHa7qnZ npx wrangler pages publish --branch=preview ./public'
             }
         }

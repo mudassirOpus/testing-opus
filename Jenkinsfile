@@ -65,7 +65,7 @@ pipeline{
                 sh 'ls -a'
                 sh 'cd testing-opus-ai'
                 sh 'ls -a'
-                sh 'CLOUDFLARE_API_TOKEN=Dzd5Vp8F4GnIIhW1-J3-VvEG_gxVe1pwddHa7qnZ npx wrangler pages publish --branch=preview ./public'
+                sh 'CLOUDFLARE_ACCOUNT_ID=account_id CLOUDFLARE_API_TOKEN=Dzd5Vp8F4GnIIhW1-J3-VvEG_gxVe1pwddHa7qnZ npx wrangler pages publish --config= ./wrangler.toml --branch=preview ./public'
             }
         }
         stage("Release"){

@@ -72,7 +72,7 @@ pipeline{
         stage("Release"){
             steps{
                 echo 'product is released'
-            }
+            } 
         }
     }
 
